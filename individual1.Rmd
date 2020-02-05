@@ -7,11 +7,19 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+#individual questions 1 and 2
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+hist(choco$Rating, breaks = 20)
+plot(x = choco$Rating, y = choco$Cocoa.Pct)
+abline(lm(choco$Cocoa.Pct ~ choco$Rating))
+```
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+The histogram for rating is centered around 2.75 to 3.5. There are outliers at ratings of 1 and 5, respectively. 
+When looking at the scatterplot, there is a very weak negative trend between cocoa percentage and rating. The relationship is basically non-existent. 
+
 
 ```{r cars}
 summary(cars)
