@@ -1,0 +1,21 @@
+---
+title: "Lab 2"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
+
+hist(choco$Rating, breaks = 20)
+plot(x=choco$Rating, y=choco$Cocoa.Pct)
+abline(lm(choco$Cocoa.Pct ~ choco$Rating))
+```
+
+1. There isn't too much of a relationship between cocoa percent and rating. There are outliers at high rated chocolate percents and ratings of 1 and 5.
+
+2. Not really due to the lack of much of a relationship.
+
