@@ -28,16 +28,22 @@ choco
 ```
 
 # 4
-```{r}
 
-```
+Interesting question: What location has the best chocolate (based off of rating and company location)?
 
 # 5
 ```{r}
+library(dplyr)
+                 
+data <- choco %>%
+  group_by(choco$Company.Location) %>%
+  summarise(averageRating = mean(Rating))
+
+# print(data)
+print("best chocolate is in: ")
+data[order("averageRating")][[1]][[1]]
 
 ```
 
 # 6
-```{r}
-
-```
+Workflow: I'm unsure what Workflow means in this case. When it comes to writing code and the workflow associated with that, R Markdown is really easy to use to test increments of code instead of testing all code at once. A lot of this involved a lot of Google research and incrementally building out our solution from there.
