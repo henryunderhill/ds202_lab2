@@ -5,7 +5,7 @@ output:
     df_print: paged
 ---
 
-
+o
 ```{r}
 choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
 head(choco)
