@@ -1,5 +1,6 @@
 ---
 title: "team.Rmd"
+names: "Ann Gould and Henry Underhill"
 output: html_document
 ---
 
@@ -14,17 +15,31 @@ choco
 
 # 1
 ```{r}
-
+length(choco$Company)
 ```
 
 # 2
 ```{r}
-
+x <- table(choco$Review.Date)
+barplot(x, main="# of Ratings vs Year", col=c("darkred", "darkblue", "green", "yellow", "purple"))
 ```
 
 # 3
 ```{r}
+#checking for 3 most frequent locations
+location <- table(choco$Company.Location)
+top3_countries <- sort(location, decreasing=TRUE)[1:3]
+top3_countries
 
+isTop3 <- choco$Company.Location == 'U.S.A.' | 
+  choco$Company.Location == 'France' | choco$Company.Location == 'Canada'
+
+table(isTop3)
+
+countries <- choco[isTop3, ]
+head(countries)
+
+plot(countries$Company.Location, countries$Rating)
 ```
 
 # 4

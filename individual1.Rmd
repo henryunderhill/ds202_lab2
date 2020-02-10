@@ -1,5 +1,6 @@
 ---
 title: "individual1"
+name: "Henry Underhill"
 output: html_document
 ---
 
